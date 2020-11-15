@@ -92,6 +92,14 @@ function apiFacade() {
     return fetch(URL + "/api/info/joke/", options).then(handleHttpErrors);
   };
 
+  const fetchPhones = () => {
+    let userName = getUserName();
+    const options = makeOptions("GET");
+    return fetch(URL + "/api/info/getuserphones/" + userName, options).then(
+      handleHttpErrors
+    );
+  };
+
   const makeOptions = (method, addToken, body) => {
     var opts = {
       method: method,
@@ -120,6 +128,7 @@ function apiFacade() {
     fetchJoke,
     addPhone,
     getRole,
+    fetchPhones,
   };
 }
 

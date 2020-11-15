@@ -46,25 +46,24 @@ function App() {
             <Route exact path="/">
               <LogIn login={login} />
               <p>{error}</p>
-              <h3>Hejsa, hvis du ikke er Lukas, så velkommen:</h3>
+              <h3>Introduktion</h3>
               <p>
-                Dette er velkomstsiden til vores startcode.
-                <br />
-                Log ind som user/testuser eller admin/testadmin.
-                <br />
-                Som user og admin kan man tilgå begge brugerheadere.
-                <br />
-                Afhængigt af hvilken rolle man har, får man fremvist en
-                <br />
-                besked, der fortæller om man er logget ind som bruger eller
-                admin.
+                Dette er velkomstsiden til mit lille projekt.
                 <br />
                 <br />
-                Man kan tilgå Starwars-route uanset om man er logget ind.
+                Jeg har anvendt vores startcode som udgangspunkt i mit projekt.
                 <br />
-                Komponentet fetcher fra swapi.com, fra fem forskellige
-                endpoints. Et for hver linje.
+                I backenden har jeg implementeret en ny Entity klasse "Phone"
+                med et forhold til en User. <br /> Jeg har implementeret
+                funktioner, der gør det muligt at tilknytte telefonnumre til en
+                bestemt User. <br /> Derudover har jeg som ekstra fetchet fra et
+                JokeAPI mere, og lavet et tilhørende endpoint. <br /> <br />I
+                frontenden har jeg lavet en Route mere, herunder "Joke". <br />{" "}
+                Herinde kan man fetche en random joke fra en eksternal server.{" "}
                 <br />
+                Hvis man logger ind som User, har man mulighed for at indtaste
+                et telefon nummer og tilkoble det Useren. <br /> <br />
+                <b> Log ind med: User: user PW: testuser</b>
               </p>
             </Route>
           </div>
