@@ -5,6 +5,12 @@ function User() {
 
   const [phone, setPhone] = useState(obj);
 
+  const [dataFromServer, setDataFromServer] = useState([]);
+
+  useEffect(() => {
+    facade.fetchPhones().then((data) => setDataFromServer(data));
+  }, [dataFromServer]);
+
   const onChange = (evt) => {
     const value = evt.target.value;
     phone.pNumber = value;
@@ -15,6 +21,10 @@ function User() {
     facade.addPhone(phone);
     setPhone({ ...obj });
   };
+
+  const listItems = dataFromServer.map((PhoneObj) => (
+    <li>{PhoneObj.number}</li>
+  ));
 
   return (
     <div>
@@ -33,6 +43,10 @@ function User() {
           Save
         </button>
       </form>
+
+      <h3> Oversigt over dine telefonnumre</h3>
+
+      <p> {listItems}</p>
     </div>
   );
 }
